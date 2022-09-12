@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 
 # assign a variable for dataset
-# hospital = pd.read_csv('data/Hospital_Inpatient_Discharges__SPARCS_De-Identified___2015.csv')
-# adi = pd.read_csv('data/NY_2015_ADI_9 Digit Zip Code_v3.1.csv')
+hospital = pd.read_csv('data/Hospital_Inpatient_Discharges__SPARCS_De-Identified___2015.csv')
+adi = pd.read_csv('data/NY_2015_ADI_9 Digit Zip Code_v3.1.csv')
 
 # print column names
 print(hospital.columns)
