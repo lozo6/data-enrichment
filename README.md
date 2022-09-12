@@ -17,3 +17,5 @@ PLEASE NOTE: if you run into any issues and can not fully complete this assignme
 One of the primary errors I obtained was attempting to push repo. I found out that I cannot push more than 100 mb of information. In order to resolve this I had added the csv files in .gitignore so I am able to push
 
 I had a lot of trouble trying to merge the data. After reading the code, I kept outputting nan or an empty space when I merged the code. I have tried multiple reseources to remedy this but I was not able to find a solution for myself.
+
+difficult to run line 26 without killing the script

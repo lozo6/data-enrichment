@@ -11,27 +11,28 @@ print(adi.columns)
 
 # added smaller version of data
 df_hospital_small = hospital[['Health Service Area', 'Hospital County', 'Zip Code - 3 digits']]
-df_adi_small = adi[['ZIPID', 'ADI_NATRANK', 'ADI_STATERNK']]
+df_adi_small = adi[['ZIPID']]
 
-# clean up data
+# clean up column names and values
 df_hospital_small.columns = df_hospital_small.columns.str.replace('[^A-Za-z0-9]+', '_').str.lower().str.strip()
 df_adi_small.columns = df_adi_small.columns.str.replace('[^A-Za-z0-9]+', '_').str.lower().str.strip()
 
 needsChange_hospital = df_hospital_small.select_dtypes(object).columns
 df_hospital_small[needsChange_hospital] = df_hospital_small[needsChange_hospital].apply(lambda x : x.str.replace('[^A-Za-z0-9]+', '_').str.lower().str.strip())
+
 needsChange_adi = df_adi_small.select_dtypes(object).columns
 df_adi_small[needsChange_adi] = df_adi_small[needsChange_adi].apply(lambda x : x.str.replace('[^A-Za-z0-9]+', '_').str.lower().str.strip())
 
+df_adi_small['zipid'] = df_adi_small['zipid'].str.slice(1,4)
+
 #print a small sample and number of rows and columns
 print(df_hospital_small.sample(10).to_markdown())
-print(df_hospital_small.shape)
-
 print(df_adi_small.sample(10).to_markdown())
-print(df_adi_small.shape)
 
 # now combining small versions into one csv
-combined_df = df_hospital_small.merge(df_adi_small, how='left', left_on='zip_code_3_digits', right_on='zipid')
-print(combined_df.sample(10).to_markdown())
+sparcs_df = df_hospital_small.merge(df_adi_small, how='left', left_on='zip_code_3_digits', right_on='zipid')
+sparcs_df = pd.merge(df_hospital_small, df_adi_small,how='left', left_on='zip_code_3_digits', right_on='zipid')
 
-combined_df.to_csv('data/combined_df.csv')
-print(combined_df.shape)
+# save to file
+sparcs_df.to_csv('data/sparcs.csv')
+print(sparcs_df.shape)
