@@ -30,8 +30,10 @@ print(df_hospital_small.sample(10).to_markdown())
 print(df_adi_small.sample(10).to_markdown())
 
 # now combining small versions into one csv
-df_sparcs = df_hospital_small.merge(df_adi_small, how='left', left_on='zip_code_3_digits', right_on='zipid')
-df_sparcs = pd.merge(df_hospital_small, df_adi_small,how='left', left_on='zip_code_3_digits', right_on='zipid')
+# df_sparcs = df_hospital_small.merge(df_adi_small, how='left', left_on='zip_code_3_digits', right_on='zipid')
+# df_sparcs = pd.merge(df_hospital_small, df_adi_small,how='left', left_on='zip_code_3_digits', right_on='zipid')
+
+df_sparcs = pd.concat([df_hospital_small, df_adi_small])
 
 print(df_sparcs.sample(10).to_markdown())
 

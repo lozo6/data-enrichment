@@ -19,3 +19,5 @@ One of the primary errors I obtained was attempting to push repo. I found out th
 I had a lot of trouble trying to merge the data. After reading the code, I kept outputting nan or an empty space when I merged the code. I have tried multiple reseources to remedy this but I was not able to find a solution for myself.
 
 difficult to run line 26 without killing the script
+
+tried concat to see if i can remove nan in zipid values
