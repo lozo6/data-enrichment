@@ -9,9 +9,6 @@ For the Hospital Inpatient Discharges (SPARCS) data (.csv), please go to https:/
 
 The data that you decide to enrich with, should be based/linked to either a zipcode, county, city, or state level to the SPARCS.csv
 
-
-PLEASE NOTE: if you run into any issues and can not fully complete this assignment, please submit via github as much as you can by the deadline; i will be doing a 'soft' grade as discussed and reviewing your attempt, and not docking any points if you can not get it to work - what i want to see is your attempt. thus if you run into any issues, please upload screen shots to your github repo of the errors you ran into, and describe your thought process for how you attempted to go about, but perhaps ultimately unsuccessful in removing said errors
-
 # Errors
 
 One of the primary errors I obtained was attempting to push repo. I found out that I cannot push more than 100 mb of information. In order to resolve this I had added the csv files in .gitignore so I am able to push
